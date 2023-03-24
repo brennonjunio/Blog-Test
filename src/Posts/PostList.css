@@ -1,0 +1,21 @@
+img {
+  border-radius: 999px;
+  width: 100px;
+}
+.separator {
+  background: #f7f9fa;
+  border-top: 1px solid #ebeef0;
+  border-bottom: 1px solid #ebeef0;
+  height: 0.75rem;
+}
+
+.post {
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.userPost {
+  border: 1px solid white;
+  margin-bottom: 1rem;
+}
