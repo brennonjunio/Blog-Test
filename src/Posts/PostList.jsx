@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./PostList.css";
 import { Link, NavLink } from "react-router-dom";
-import { Button, Stack } from "react-bootstrap";
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
@@ -34,7 +33,7 @@ const PostList = () => {
 
           <h2>Title: {post.title}</h2>
           <p>Post: {post.body}</p>
-          <NavLink to="/comments">Comentarios</NavLink>
+          <NavLink to={`/comments/${post.id}`}>Comentarios</NavLink>
         </div>
       ))}
     </div>

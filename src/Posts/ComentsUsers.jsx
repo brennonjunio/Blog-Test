@@ -1,68 +1,40 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
+import "./CommentsUsers.css";
 
 const ComentsUsers = () => {
   const [comentario, setComentario] = useState([]);
   const navigate = useNavigate();
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchComentarios = async () => {
       const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/1/comments`
+        `https://jsonplaceholder.typicode.com/posts/${id}/comments`
       );
 
       setComentario(response.data);
-      console.log(comentario);
     };
 
     fetchComentarios();
   }, []);
   return (
-    <div>
+    <div className="container">
       Comentarios
       <NavLink to="/">Home</NavLink>
+      <div>
+        {comentario.map((c) => (
+          <div className="commentsUsers">
+            <p>Post: {c.postId}</p>
+            <p>CommentsID: {c.id}</p>
+            <p>Title Comment: {c.name}</p>
+            <p>Body Comment: {c.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default ComentsUsers;
-
-// import { ArrowsClockwise, ChatCircle, Heart } from "phosphor-react";
-// import "./Tweet.css";
-// import { Link } from "react-router-dom";
-
-// interface TweetProps {
-//   content: string;
-// }
-
-// export function Tweet(props: TweetProps) {
-//   return (
-//     <Link to="/status" className="tweet">
-//       <img
-//         src="https://avatars.githubusercontent.com/u/121310442?v=4"
-//         alt="Brennon Junio"
-//       />
-//       <div className="tweet-content">
-//         <div className="tweet-content-header">
-//           <strong>Brennon Junio</strong>
-//           <span>@brennonJunio</span>
-//         </div>
-//         <p>{props.content}</p>
-//         <div className="tweet-content-footer">
-//           <button type="button">
-//             <ChatCircle />
-//             20
-//           </button>
-//           <button type="button">
-//             <ArrowsClockwise />
-//             20
-//           </button>
-//           <button type="button">
-//             <Heart />
-//             20
-//           </button>
-//         </div>
-//       </div>
-//     </Link>
-//   );
-// }
