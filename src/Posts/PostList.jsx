@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./PostList.css";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
+import CommentsUsers from "./CommentsUsers";
+import { Button } from "react-bootstrap";
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
+  const [showComments, setShowComments] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -33,7 +36,14 @@ const PostList = () => {
 
           <h2>Title: {post.title}</h2>
           <p>Post: {post.body}</p>
-          <NavLink to={`/comments/${post.id}`}>Comentarios</NavLink>
+          {post.id === showComments && <CommentsUsers postId={post.id} />}
+          {/* Verificando se a chamada é verdadeira, para não vim varios comentarios e/ou null */}
+
+
+
+          <Button variant="secondary" onClick={() => setShowComments(post.id === showComments ? null : post.id)}>Comentários</Button>
+
+
         </div>
       ))}
     </div>

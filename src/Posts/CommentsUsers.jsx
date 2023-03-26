@@ -9,28 +9,28 @@ import { ListGroupItem } from "react-bootstrap";
 
 
 
-const ComentsUsers = ({postId}) => {
+const CommentsUsers = ({postId}) => {
   const [comentario, setComentario] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchComentarios = async () => {
       const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+        `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
       );
 
       setComentario(response.data);
     };
 
     fetchComentarios();
+    console.log("Qtd de Comentarios")
   }, [postId]);
   return (
     <div className="container">
-      <NavLink to="/">Home</NavLink>
-      <div>
+      <div >
         {comentario.map((c) => (
-          <ListGroup>
-            <ListGroupItem key={c.id}>
+          <ListGroup key={c.id}>
+            <ListGroupItem >
             <p>Post: {c.postId}</p>
             <p>CommentsID: {c.id}</p>
             <p>Title Comment: {c.name}</p>
@@ -44,4 +44,4 @@ const ComentsUsers = ({postId}) => {
   );
 };
 
-export default ComentsUsers;
+export default CommentsUsers;
