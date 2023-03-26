@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Stack } from "react-bootstrap";
-import PostList from "../Posts/PostList";
+import NavBar from "../Components/NavBar/NavBar";
+import PostList from "../Components/PostList";
 import "./Index.css";
 
 const Index = () => {

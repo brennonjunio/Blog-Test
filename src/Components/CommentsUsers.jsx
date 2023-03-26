@@ -11,7 +11,6 @@ import { ListGroupItem } from "react-bootstrap";
 
 const CommentsUsers = ({postId}) => {
   const [comentario, setComentario] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchComentarios = async () => {
