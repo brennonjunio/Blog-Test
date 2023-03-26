@@ -8,15 +8,15 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
 
     return (
-      <Navbar expand="lg" className='navbar-dark'>
+      <Navbar expand="lg" className='navbar-dark '>
           <Container>
-          <NavLink className="nav-link" to="/">Posts</NavLink>
+          <NavLink className="nav-link " to="/">Posts</NavLink>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <NavLink className="nav-link" to="/user">Users</NavLink>
-                <NavLink className="nav-link" to="/link">Dev Info</NavLink>
+                <NavLink className="nav-link  "  to="/user">Users</NavLink>
+                <NavLink className="nav-link " to="/link">Dev Info</NavLink>
               
               </Nav>
             </Navbar.Collapse>

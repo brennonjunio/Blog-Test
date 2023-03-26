@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, CardGroup } from "react-bootstrap";
-
-import "./Users.css"
-
+import "./Users.css";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -44,18 +43,20 @@ const UserCard = ({ user }) => {
 
   return (
     <div className="container">
-    <Card className="mb-4">
-      <Card.Img  src={dogUrl}  style={{height:"150px"}}/>
-      <Card.Body className="">
-        <Card.Title className="text-black"> {user.name}</Card.Title>
-        <Card.Text className="text-black">Email : {user.email}  </Card.Text>
-        <Card.Text className="text-black">Phone : {user.phone}  </Card.Text>
-        <Card.Text className="text-black">WebSite : {user.website}  </Card.Text>
-      </Card.Body>
-    </Card>
+      <Card className="mb-4">
+        <Card.Img src={dogUrl} style={{ height: "150px" }} />
+        <Card.Body className="">
+       
+          <Card.Title className="text-black"> {user.name}</Card.Title>
+          <Card.Text className="text-black">Email : {user.email} </Card.Text>
+          <Card.Text className="text-black">Phone : {user.phone} </Card.Text>
+          <Card.Text className="text-black">
+            WebSite : {user.website}
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </div>
   );
 };
-
 
 export default Users;
