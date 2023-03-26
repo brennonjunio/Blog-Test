@@ -2,10 +2,15 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import "./CommentsUsers.css";
+import ListGroup from 'react-bootstrap/ListGroup';
+import { ListGroupItem } from "react-bootstrap";
 
-const ComentsUsers = () => {
+
+
+
+
+const ComentsUsers = ({postId}) => {
   const [comentario, setComentario] = useState([]);
-  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,20 +23,22 @@ const ComentsUsers = () => {
     };
 
     fetchComentarios();
-  }, []);
+  }, [postId]);
   return (
     <div className="container">
-      Comentarios
       <NavLink to="/">Home</NavLink>
       <div>
         {comentario.map((c) => (
-          <div className="commentsUsers">
+          <ListGroup>
+            <ListGroupItem key={c.id}>
             <p>Post: {c.postId}</p>
             <p>CommentsID: {c.id}</p>
             <p>Title Comment: {c.name}</p>
             <p>Body Comment: {c.body}</p>
-          </div>
+            </ListGroupItem>
+          </ListGroup>
         ))}
+        
       </div>
     </div>
   );
