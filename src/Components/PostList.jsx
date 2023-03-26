@@ -27,7 +27,6 @@ const PostList = () => {
             <NavLink to="/user">
               <img
                 src="https://avatars.githubusercontent.com/u/121310442?v=4"
-                alt="Brennon Junio"
               />
             </NavLink>
             <h4 className="text-white ">User Id: {post.userId}</h4>

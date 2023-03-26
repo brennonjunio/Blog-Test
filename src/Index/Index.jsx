@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Container, Stack } from "react-bootstrap";
-import NavBar from "../Components/NavBar/NavBar";
 import PostList from "../Components/PostList";
 import "./Index.css";
 

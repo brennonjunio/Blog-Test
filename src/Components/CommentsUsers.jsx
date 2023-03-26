@@ -29,7 +29,7 @@ const CommentsUsers = ({postId}) => {
       <div >
         {comentario.map((c) => (
           <ListGroup key={c.id}>
-            <ListGroupItem >
+            <ListGroupItem className="mt-4">   
             <p>Post: {c.postId}</p>
             <p>CommentsID: {c.id}</p>
             <p>Title Comment: {c.name}</p>

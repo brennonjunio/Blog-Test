@@ -16,7 +16,7 @@ root.render(
 
       <Route path="/" element={<Index />} />
       <Route path="/comments/:id" element={<CommentsUsers />} />
-      <Route path="/user/" element={<Users />} />
+      <Route path="/user" element={<Users />} />
     </Routes>
   </BrowserRouter>
 );
