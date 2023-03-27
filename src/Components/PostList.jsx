@@ -37,14 +37,24 @@ const PostList = () => {
           {post.id === showComments && <CommentsUsers postId={post.id} />}
           {/* Verificando se a chamada é verdadeira, para não vim varios comentarios e/ou null */}
 
-          <Button
+          {/* <Button
             variant="secondary"
             onClick={() =>
               setShowComments(post.id === showComments ? null : post.id)
             }
           >
             Comentários
-          </Button>
+          </Button> */}
+          <div className="d-flex justify-content-center">
+  <Button
+    variant="secondary"
+    onClick={() =>
+      setShowComments(post.id === showComments ? null : post.id)
+    }
+  >
+    Comentários
+  </Button>
+</div>
         </div>
       ))}
     </div>

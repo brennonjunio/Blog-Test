@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import "./CommentsUsers.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import { ListGroupItem } from "react-bootstrap";
 
@@ -11,6 +10,7 @@ import { ListGroupItem } from "react-bootstrap";
 
 const CommentsUsers = ({postId}) => {
   const [comentario, setComentario] = useState([]);
+  
 
   useEffect(() => {
     const fetchComentarios = async () => {
@@ -30,8 +30,8 @@ const CommentsUsers = ({postId}) => {
         {comentario.map((c) => (
           <ListGroup key={c.id}>
             <ListGroupItem className="mt-4">   
-            <p>Post: {c.postId}</p>
-            <p>CommentsID: {c.id}</p>
+            <p className="userComment">Post: {c.postId}</p>
+            <p className="userComment">CommentsID: {c.id}</p>
             <p>Title Comment: {c.name}</p>
             <p>Body Comment: {c.body}</p>
             </ListGroupItem>
