@@ -56,11 +56,6 @@ const UserCard = ({ user }) => {
         </Card.Body>
       </Card>
     </div>
-  );
-<<<<<<< HEAD
-}
-=======
-};
-
->>>>>>> app
+  )
+  }
 export default Users;
