@@ -1,0 +1,45 @@
+img {
+  border-radius: 999px;
+  width: 45px;
+  float: left;
+  margin-right: 1rem;
+  margin: 5px;
+}
+
+.post {
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: white;
+  margin-top: 50px;
+}
+
+.userPost {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
+  width: 10rem;
+  background-color: #198754;
+  color: white;
+  box-shadow: 7px 6px 3px 1px rgb(78, 80, 85);
+}
+
+.postText {
+  font-weight: bold;
+  color: rgb(66, 63, 63);
+}
+.userPost:hover {
+  background-color: violet;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.postTitle {
+  text-align: center;
+  color: #198754;
+  font-weight: bold;
+}
+
+.buttonComments {
+  box-shadow: 4px 3px 3px 1px rgb(78, 80, 85);
+}

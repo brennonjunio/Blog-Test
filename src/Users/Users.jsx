@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card, Col, CardGroup } from "react-bootstrap";
-import "./Users.css";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -44,18 +42,28 @@ const UserCard = ({ user }) => {
   return (
     <div className="container">
       <Card className="mb-4">
-        <Card.Img src={dogUrl} style={{ height: "150px" }} />
-        <Card.Body className="">
-       
-          <Card.Title className="text-black"> {user.name}</Card.Title>
-          <Card.Text className="text-black">Email : {user.email} </Card.Text>
-          <Card.Text className="text-black">Phone : {user.phone} </Card.Text>
-          <Card.Text className="text-black">
-            WebSite : {user.website}
-          </Card.Text>
-        </Card.Body>
+        <div className="d-flex align-items-center">
+          <Card.Img
+            src={dogUrl}
+            style={{ maxWidth: "100px", maxHeight: "100px", float: "left" }}
+          />
+          <Card.Body className="flex-grow-1">
+            <Card.Title
+              className="text-black"
+              style={{ fontWeight: "100px", fontFamily: "monospace" }}
+            >
+              {user.name}
+            </Card.Title>
+            <Card.Text className="text-black">📩 {user.email} </Card.Text>
+            <Card.Text className="text-black">📱 {user.phone} </Card.Text>
+            <Card.Text className="text-black">
+              🔗
+              {user.website}
+            </Card.Text>
+          </Card.Body>
+        </div>
       </Card>
     </div>
-  )
-  }
+  );
+};
 export default Users;

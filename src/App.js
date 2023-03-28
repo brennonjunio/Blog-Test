@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react'
-import NavBar from './Components/NavBar/NavBar'
+import React, { useEffect } from "react";
+import NavBar from "./Components/NavBar/NavBar";
 
 const App = () => {
-    useEffect(()=>{
-        document.title ="Blog"
+  useEffect(() => {
+    document.title = "Blog";
+  }, []);
+  return <NavBar />;
+};
 
-    },[])
-  return (
-    <NavBar/>
-  )
-}
-
-export default App
+export default App;
